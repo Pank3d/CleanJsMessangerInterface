@@ -1,0 +1,523 @@
+body {
+  background-color: #f4f7f6;
+  margin-top: 20px;
+}
+
+
+.element {
+  text-align: center;
+}
+
+
+.chat-list {
+  display: flex;
+  justify-content: flex-end; /* Aligns children (li) to the right */
+  padding: 0; /* Removes padding if any exists */
+  list-style: none; /* Removes bullet points from list */
+  width:min-content ;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 10%; /* Could be more or less, depending on screen size */
+  height: 49%;
+  border-radius: 6%;
+}
+
+
+
+.chat-list li {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+
+
+
+
+.edit-user-button {
+  /* Your styles here */
+  margin-left: auto; /* for exampl
+  
+  e, to push the button to the right side */
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px; /* Add some space between the avatar and the user info */
+}
+
+li.clearfix {
+  display: flex;
+  align-items: center; /* This will align items vertically in the center */
+}
+
+.edit-user-button {
+  margin-right: 10px; /* Add some space between the button and the avatar */
+}
+
+
+.input-group-text {
+  display: flex;
+  border: 1px solid #ccc; /* добавляем рамку вокруг всего input-group */
+  background-color: transparent;
+}
+
+.online {
+  color: #86BB71; /* Green color to indicate online status */
+}
+
+.last-message {
+  font-size: 0.85em; /* Smaller font size for the last message */
+  color: #666; /* Grey color for the text */
+}
+
+
+
+.input-group {
+  display: flex;
+  border: 1px solid #ccc; /* добавляем рамку вокруг всего input-group */
+}
+
+.input-group-prepend {
+  background: #f0f0f0; /* цвет заднего фона немного темнее */
+  padding: 10px;
+  border-right: 1px solid #ccc; /* добавляем рамку между элементами */
+  width: 15px;
+  height: 16px;
+}
+
+.form-control {
+  flex: 1;
+  border: none; /* убираем рамку у form-control */
+  padding: 8px;
+  box-sizing: border-box;
+}
+.card {
+  background: #fff;
+  transition: 0.5s;
+  border: 0;
+  margin-bottom: 30px;
+  border-radius: 0.55rem;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+}
+.chat-app .people-list {
+  width: 260px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  z-index: 7;
+}
+
+
+
+
+.chat {
+  position: relative; /* Делает .chat контекстом позиционирования для .chat-message */
+  /* ... остальные стили ... */
+}
+
+.chat-app .chat {
+  margin-left: 300px;
+  border-left: 1px solid #eaeaea;
+}
+
+.people-list {
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.people-list .chat-list li {
+  padding: 10px 15px;
+  list-style: none;
+  border-radius: 3px;
+}
+
+.people-list .chat-list li:hover {
+  background: #efefef;
+  cursor: pointer;
+}
+
+.people-list .chat-list li.active {
+  background: #efefef;
+}
+
+.people-list .chat-list li .name {
+  font-size: 15px;
+}
+
+.people-list .chat-list img {
+  width: 45px;
+  border-radius: 50%;
+}
+
+.people-list img {
+  float: left;
+  border-radius: 50%;
+}
+
+.people-list .about {
+  float: left;
+  padding-left: 8px;
+}
+
+.chat .chat-header {
+  padding: 15px 20px;
+  border-bottom: 2px solid #f4f7f6;
+}
+
+.chat .chat-header img {
+  float: left;
+  border-radius: 40px;
+  width: 60px;
+}
+
+.chat .chat-header .chat-about {
+  float: left;
+  padding-left: 10px;
+}
+
+#no-chat-selected {
+  text-align: center;
+  margin-top: 320px;
+  display: block; /* Всегда показывать этот блок, пока не выбран чат */
+}
+
+.chat-history {
+  overflow-y: auto;
+  height: 88.15%; /* Высота должна быть рассчитана с учетом высоты поля ввода и другфих элементов */
+  margin-bottom: 60px; /* Дайте место для поля ввода сообщения */
+}
+
+.chat .chat-history ul {
+  padding: 0;
+}
+
+.chat .chat-history ul li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.chat .chat-history ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.chat .chat-history .message-data {
+  margin-bottom: 15px;
+}
+
+.chat .chat-history .message-data img {
+  border-radius: 40px;
+  width: 40px;
+}
+
+.chat .chat-history .message-data-time {
+  color: #434651;
+  padding-left: 6px;
+}
+
+.chat .chat-history .message {
+  color: #444;
+  padding: 18px 20px; /* Поддерживаем отступы внутри сообщений */
+  line-height: 26px;
+  font-size: 16px;
+  border-radius: 7px;
+  background-color: #f9f9f9; /* Цвет фона сообщения */
+  margin-right: 5px; /* Минимальный отступ справа */
+  margin-left: auto; /* Для автоматического выравнивания элементов */
+  float: right; /* Выравнивание элемента по правой стороне */
+  clear: both; /* Убираем обтекание для следующих элементов */
+  max-width: calc(100% - 1px  ); /* Максимальная ширина с учетом отступа справа */
+  /* Если вы хотите, чтобы блок сообщения был максимально широким, вы можете использовать 100% */
+  display: block; /* Убедитесь, что это блочный элемент */
+}
+
+/* Для корректной очистки потока после использования float */
+.chat .chat-history::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.message-mine {
+  text-align: right  !important;
+  float: right  !important;
+  clear: both;
+  background-color: #DCF8C6; /* Пример цвета фона */
+  /* Добавьте другие стили, если необходимо */
+}
+
+
+
+/* Добавьте следующие стили в ваш файл main.css или внутри <style> элемента в вашем HTML */
+
+/* Стили для контейнера пользователей с прокруткой */
+.people-list {
+  height: 300px; /* Задайте высоту контейнера, при которой будет отображаться вертикальная прокрутка */
+  overflow-y: scroll; /* Включите вертикальную прокрутку, если контент выходит за пределы контейнера */
+}
+
+.user-message {
+  text-align: right;
+  /* Дополнительные стили, например, цвет фона, цвет текста и т.д. */
+}
+
+/*шапка чата  */
+
+.message-avatar {
+  width: 30px; /* Размер аватара */
+  height: 30px; /* Размер аватара */
+  border-radius: 50%; /* Круглый аватар */
+  margin-bottom: 5px; /* Отступ снизу для аватара */
+}
+
+
+
+.chat-history {
+  height: 790px; /* Задайте высоту контейнера, при которой будет отображаться вертикальная прокрутка */
+  overflow-y: scroll; /* Включите вертикальную прокрутку, если контент выходит за пределы контейнера */
+}
+
+.message-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.chat-avatar {
+  width: 30px; /* Задайте нужный размер */
+  height: 30px; /* Задайте нужный размер */
+  border-radius: 50%; /* Делает аватар круглым */
+  margin-right: 10px; /* Отступ справа */
+}
+
+
+
+
+.message-container {
+  display: flex;
+  flex-direction: column; /* Стекает дочерние элементы вертикально */
+  align-items: flex-end; /* Выравнивание элементов справа */
+  margin-bottom: 10px; /* Отступ снизу для каждого сообщения */
+}
+
+.message-theirs {
+  text-align: left !important;
+  float: left  !important;
+  clear: both;
+  background-color: #FFFFFF; /* Пример цвета фона */
+  /* Добавьте другие стили, если необходимо */
+}
+
+#messageDisplay .message-container .message-mine {
+  text-align: right;
+  float: right;
+  /* ... остальные стили ... */
+}
+
+#messageDisplay .message-container .message-theirs {
+  text-align: left;
+  float: left;
+  /* ... остальные стили ... */
+}
+
+
+
+.avatar {
+  width: 40px; /* Размер аватара */
+  height: 40px;
+  border-radius: 50%; /* Круглый аватар */
+  margin-right: 10px; /* Отступ между аватаром и текстом */
+}
+
+.float-right {
+  float: right; /* Прижимаем элементы к правому краю */
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; /* Обеспечиваем очистку float */
+}
+
+
+.message {
+  padding: 10px; /* Отступы внутри сообщения */
+  background-color: #f0f0f0; /* Фон сообщения */
+  border-radius: 5px; /* Скругленные углы сообщения */
+  margin-right: 10px; /* Отступ справа от аватара до сообщения */
+  max-width: 80%; /* Максимальная ширина сообщения */
+  word-wrap: break-word; /* Перенос слов внутри сообщения */
+}
+
+
+.avatar {
+  width: 40px; /* Размер аватара */
+  height: 40px;
+  border-radius: 50%; /* Круглый аватар */
+  margin-right: 10px; /* Отступ между аватаром и текстом */
+}
+
+
+.chat .chat-history .message:after {
+  bottom: 100%;
+  left: 7%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.chat .chat-history .my-message {
+  background: #efefef;
+}
+
+.chat .chat-history .my-message:after {
+  bottom: 100%;
+  left: 30px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #efefef;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.chat .chat-history .other-message {
+  background: #e8f1f3;
+  text-align: right;
+}
+
+
+.chat-message {
+  position: fixed;
+  bottom: 0;
+  left: 288px; /* Измените это значение в соответствии с шириной вашего сайдбара */
+  right: 0;
+  width: calc(100% - 260px); /* Вычитаем ширину сайдбара из 100% ширины */
+  /* ... остальные стили ... */
+}
+
+.chat-message .input-group {
+  justify-content: flex-end; /* Это выровняет содержимое внутри .input-group вправо */
+}
+.input-group.mb-0 {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: flex-end; /* Растянуть вправо */
+  width: 100%;
+}
+
+
+.chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+
+.chat .chat-history .other-message:after {
+  border-bottom-color: #e8f1f3;
+  left: 93%;
+}
+
+
+.message-container {
+  
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .chat-app .people-list {
+    height: 465px;
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    left: -400px;
+    display: none;
+  }
+  .chat-app .people-list.open {
+    left: 0;
+  }
+  .chat-app .chat {
+    margin: 0;
+  }
+  .chat-app .chat .chat-header {
+    border-radius: 0.55rem 0.55rem 0 0;
+  }
+  .chat-app .chat-history {
+    height: 300px;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .chat-app .chat-list {
+    height: 650px;
+    overflow-x: auto;
+  }
+  .chat-app .chat-history {
+    height: 600px;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .chat-app .chat-list {
+    height: 480px;
+    overflow-x: auto;
+  }
+  .chat-app .chat-history {
+    height: calc(100vh - 350px);
+    overflow-x: auto;
+  }
+}

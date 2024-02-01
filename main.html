@@ -1,0 +1,109 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat App</title>
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-lg-12">
+        <div class="card chat-app">
+          <div id="plist" class="people-list">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search..." id="searchInput" />
+            </div>
+            <ul class="list-unstyled chat-list mt-2 mb-0">
+              <li class="clearfix">
+                <button class="edit-user-button">Edit</button>
+                <img
+                  src="https://fikiwiki.com/uploads/posts/2022-02/1644934560_33-fikiwiki-com-p-kartinki-shpionov-36.png"
+                  alt="avatar"
+                />
+                <div class="about">
+                  <div class="name">User_1</div>
+                  <div class="status">
+                    <!-- Status can be shown here -->
+                  </div>
+                  <div class="last-message">
+                    <!-- Last message can be shown here -->
+                  </div>
+                </div>
+              </li>
+              <!-- Add other users similarly -->
+            </ul>
+          </div>
+          <div class="chat">
+            <div class="chat-header clearfix">
+              <img
+                src="https://fikiwiki.com/uploads/posts/2022-02/1644934560_33-fikiwiki-com-p-kartinki-shpionov-36.png" 
+                alt="avatar"
+                class="chat-header-avatar" 
+              />
+              <div class="chat-about">
+                <h6 class="m-b-0">User_1</h6>
+              </div>
+            </div>
+            <div class="chat-history">
+              <div id="no-chat-selected">
+                Select a user to start chat
+              </div>
+              <ul id="messageDisplay" style="display: none;">
+                <!-- Messages will be displayed here -->
+              </ul> 
+            </div>
+            <div class="chat-message clearfix" id="chatInput">
+              <div class="input-group mb-0">
+                <div class="input-group-prepend"> 
+                  <button id="sendButton" class="input-group-text">
+                    <i class="fa fa-paper-plane"></i>
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter text here..."
+                  id="messageInput"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for editing user -->
+  <div id="editUserModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <form id="editUserForm">
+        <h2>Edit User</h2>
+        <label for="newUserName">New Username:</label>
+        <input type="text" id="newUserName" placeholder="Enter new name" required>
+        
+        <img id="userAvatarPreview" src="" alt="Avatar Preview" style="width: 100px; height: 100px; display: block; margin-bottom: 10px;" />
+        
+        <label for="newUserAvatar">New Avatar:</label>
+        <input type="file" id="newUserAvatar" accept="image/*">
+        <button class="user-action-button">Unblock</button>
+
+        <button type="submit">Save</button>
+        <li class="clearfix" data-blocked="false">
+          <!-- other user details -->
+          <button class="user-action-button">Block</button>
+        </li>
+        
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
